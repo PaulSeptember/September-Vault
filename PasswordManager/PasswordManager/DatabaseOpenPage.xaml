@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Open database"
+             x:Class="App1.DatabaseOpenPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="databaseName" 
+                Text="Bug." FontSize="Large"
+               
+                HorizontalOptions="StartAndExpand"/>
+            
+            <Label Text="Enter password:"
+              
+                HorizontalOptions="StartAndExpand"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="passwordEntry" HorizontalOptions="FillAndExpand" Placeholder="Enter password" />
+                <Button Text="Open" Clicked="EncryptDatabase" />
+            </StackLayout>
+            <Label  Text="Forgot password? Use backup QR-key."/>
+            <Button x:Name="QRScanButton" Text="QR-scan"/>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

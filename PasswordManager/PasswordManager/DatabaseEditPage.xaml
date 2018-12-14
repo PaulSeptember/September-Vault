@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Database edit"
+             x:Class="App1.DatabaseEditPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="Caption" HorizontalOptions="Start" FontSize="Large"/>
+            <Label Text="Entries:"/>
+            <Grid VerticalOptions="FillAndExpand">
+                <ListView x:Name="databasesList" ItemSelected="DatabaseSelect"   >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}">
+                                <TextCell.ContextActions>
+                                    <MenuItem Text="Delete" IsDestructive="True" Clicked="DeleteExist" />
+                                </TextCell.ContextActions>
+                            </TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Text="Edit" VerticalOptions="End" HorizontalOptions="End" Clicked="CreateNew"  />
+                
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

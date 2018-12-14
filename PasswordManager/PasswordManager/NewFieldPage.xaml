@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="New entry"
+             x:Class="App1.NewFieldPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Name:"/>
+            <Entry x:Name ="nameEntry"/>
+            <Label Text="Login:"/>
+            <Entry x:Name ="loginEntry"/>
+            <Label Text="Password:"/>
+            <Entry x:Name ="passwordEntry"/>
+            <Label Text="Url:"/>
+            <Entry x:Name ="urlEntry"/>
+            <Button Text="Save" Clicked="Save"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

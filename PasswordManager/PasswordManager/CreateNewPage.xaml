@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Create new" 
+             x:Class="App1.CreateNewPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout Orientation="Vertical">
+            <Label Text="Enter name of database:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand"/>
+            
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="fileNameEntry" HorizontalOptions="FillAndExpand" Placeholder="Name of database" />
+                <Button Text="Save" Clicked="Save" />
+            </StackLayout>
+            
+            <Label Text="Enter master password:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="PasswordEntry" HorizontalOptions="FillAndExpand" Placeholder="Password" IsPassword="True" />
+                <Button Text="Random" Clicked="Random" />
+                <Button Text="Reveal" Clicked="Reveal" />               
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="ConfirmPasswordEntry" HorizontalOptions="FillAndExpand" Placeholder="Confirm password" IsPassword="True" />
+            </StackLayout>
+
+        </StackLayout>
+        
+        <Editor Grid.Row="1" x:Name="textEditor" />
+        
+    </Grid>
+</ContentPage>
