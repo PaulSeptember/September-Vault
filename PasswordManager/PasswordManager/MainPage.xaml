@@ -32,7 +32,7 @@
             VerticalOptions="Center"
             Clicked="ToCreate"/>
 
-        <Label Text="Recent databaces:" 
+        <Label Text="Recent databases:" 
             Margin="20,0,20,0"
             HorizontalOptions="Start"
             VerticalOptions="Center"
