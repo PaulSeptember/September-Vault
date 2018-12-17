@@ -45,6 +45,7 @@ namespace App1
 
         async public void CreateNew(object sender, SelectedItemChangedEventArgs args)
         {
+            //TODO: different types of fields
             await Navigation.PushAsync(new NewFieldPage(file,this));
         }
 

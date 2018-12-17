@@ -3,70 +3,95 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App1"
              x:Class="App1.MainPage"
-             BackgroundColor="#1C5AA6"
+             BackgroundColor="#fefefe"
              
              NavigationPage.HasNavigationBar="False">
   
-    <StackLayout x:Name="Stack1" Spacing="6">
-
-
-        <Label Text="Hello"  
-               HorizontalOptions="CenterAndExpand"
-               FontSize="Large"
-               FontFamily="Arial"/>
+    <StackLayout x:Name="Stack1" Spacing="9" Margin="0,20,0,0">
+        
         
         <Button Text = "Open file..." 
-            FontSize="Large" BorderWidth="1"
-                WidthRequest="300"
-                BackgroundColor="White"
-                TextColor="Gray"
-           HorizontalOptions="Center"
-                VerticalOptions="Center"
+            FontSize="Large" BorderWidth="3"
+            WidthRequest="300"
+            BorderColor="Black"
+            BorderRadius="4"
+            BackgroundColor="White"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
             Clicked="ToChoose"/>
       
         <Button Text = "Create new database..." 
-                 BackgroundColor="White"
-                 WidthRequest="300"
-            FontSize="Large" BorderWidth="1"
-                TextColor="Gray"
+            BackgroundColor="White"
+            BorderRadius="4"
+            WidthRequest="300"
+            FontSize="Large" BorderWidth="3"
+            BorderColor="Black"
+            TextColor="Black"
             HorizontalOptions="Center"
-                VerticalOptions="Center"
+            VerticalOptions="Center"
             Clicked="ToCreate"/>
-         
-        <Label Text="Recent databaces:"  
-               HorizontalOptions="Start"
-                VerticalOptions="Center"
-            
-               FontSize="Large"
-               FontFamily="Arial"/>
 
-        <ListView x:Name="filesList" ItemSelected="FileSelect">
-        <!--<ListView.ItemTemplate>
+        <Label Text="Recent databaces:" 
+            Margin="20,0,20,0"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="Medium"
+            FontFamily="Arial"/>
+        <ListView 
+            Margin="20,0,20,0"
+            x:Name="filesList" ItemSelected="FileSelect" SeparatorColor="#666666" MinimumHeightRequest="300">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}">
-                        <TextCell.ContextActions>
-                            <MenuItem Text="Delete" IsDestructive="True" Clicked="Delete" />
-                        </TextCell.ContextActions>
-                    </TextCell>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#fefefe"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="key_icon.xml"/>
+                                <Label 
+                                TextColor="Black" Text="{Binding }" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
-            </ListView.ItemTemplate> -->
+            </ListView.ItemTemplate>
         </ListView>
-        
-        <Button 
-            Image="SettingsIcon.png"
-            FontSize="Large" BorderWidth="1"
-             HorizontalOptions="End"
+
+        <Grid MinimumHeightRequest="140">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+                <Button 
+                    HeightRequest="130"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Image="settings_icon.xml"
+                    FontSize="Large" BorderWidth="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    BackgroundColor="Transparent"
+                    Clicked="ToSettings"/>
+                <Button 
+                    HeightRequest="130"
+                     Grid.Row="0"
+                    Grid.Column="2"
+                Image="about_icon.xml"
+                FontSize="Large" BorderWidth="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
                 VerticalOptions="End"
-             BackgroundColor="Transparent"
-            Clicked="ToSettings"/>
-      
-        <Button 
-            Image="AboutIcon.jpg"
-            FontSize="Large" BorderWidth="1"
-            BackgroundColor="Transparent"
-            HorizontalOptions="End"
-                VerticalOptions="End"
-            Clicked="ToAbout"/>
+                Clicked="ToAbout"/>
+            <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="cat_from_bellow.png"></Image>
+            </Grid>
+               
+       
     </StackLayout>
   
 </ContentPage>

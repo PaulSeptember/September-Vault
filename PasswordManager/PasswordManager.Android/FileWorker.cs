@@ -28,7 +28,6 @@ namespace App1.Droid
 
         public Task<IEnumerable<string>> GetFilesAsync()
         {
-            // получаем все все файлы из папки
             IEnumerable<string> filenames = from filepath in Directory.EnumerateFiles(GetDocsPath())
                                             select Path.GetFileName(filepath);
             return Task<IEnumerable<string>>.FromResult(filenames);
