@@ -14,14 +14,17 @@ namespace App1
 	{
         string file;
         Database database;
+        bool showed = true;
 
 	    public DatabaseEditPage(string filename)
 		{
 			InitializeComponent ();
             this.file = filename;
-            Caption.Text = "Database " + filename;
-            kostyl();           
-		}
+            Title = "Database " + filename;
+            kostyl();
+            
+
+        }
 
         async void kostyl()
         {
@@ -32,7 +35,12 @@ namespace App1
 
         async void UpdateList()
         {
-            databasesList.ItemsSource = database.getForList();     
+            databasesList.ItemsSource = database.getForList();
+            /* if (database.getForList().Length > 0)
+                Cat.Source = "sleeping_cat_bellow.png";
+            else
+                Cat.Source = "sad_cat_bellow.png";*/
+                
         }
 
         async void DeleteExist(object sender, EventArgs args)
@@ -43,11 +51,35 @@ namespace App1
             UpdateList();
         }
 
+        
+
         async public void CreateNew(object sender, SelectedItemChangedEventArgs args)
         {
             //TODO: different types of fields
-            await Navigation.PushAsync(new NewFieldPage(file,this));
+            showed = !showed;
+            button0.IsVisible = showed;
+            button1.IsVisible = showed;
+            button2.IsVisible = showed;
+            button3.IsVisible = showed;
+            //await Navigation.PushAsync(new NewFieldPage(file,this));
         }
+        async public void NewKey(object sender, SelectedItemChangedEventArgs args)
+        {
+            await Navigation.PushAsync(new NewFieldPage(file, this));
+        }
+        async public void NewWifi(object sender, SelectedItemChangedEventArgs args)
+        {
+            await Navigation.PushAsync(new NewFieldPage(file, this));
+        }
+        async public void NewCard(object sender, SelectedItemChangedEventArgs args)
+        {
+            await Navigation.PushAsync(new NewFieldPage(file, this));
+        }
+        async public void NewSecure(object sender, SelectedItemChangedEventArgs args)
+        {
+            await Navigation.PushAsync(new NewFieldPage(file, this));
+        }
+
 
         async public void add(Field temp)
         {

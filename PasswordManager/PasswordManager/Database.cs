@@ -14,6 +14,7 @@ namespace App1
         public string login;
         public string password;
         public string url;
+        public int type;
 
         public override string ToString()
         {
@@ -53,7 +54,10 @@ namespace App1
                         break;
                 }
                 if (i % 4 == 0)
+                {
+                    temp.type = 1;
                     fields.Add(temp);
+                }
             }
         }
 
@@ -61,7 +65,10 @@ namespace App1
         {
             string[] ans = new string[fields.Count];
             for (int i = 0; i < fields.Count; i++)
+            {
                 ans[i] = fields[i].name;
+                //ans[i].icon = "key_icon.xml";
+            }
             return ans;
         }
 

@@ -4,19 +4,34 @@
              Title="Choose database" 
              x:Class="App1.ChoosePage">
 
-    <StackLayout>
-        <Label Text="Founded databases:"
-                
+    <StackLayout Margin="20,0,20,0">
+        <StackLayout Orientation="Horizontal" Margin="0,20,0,20">
+            <Image Source="microsd_icon.xml"/>
+            <Label Text="Founded databases:"
+                TextColor="Black"
+                FontSize="Medium"
                 HorizontalOptions="StartAndExpand"/>
+        </StackLayout>
         
-        <ListView x:Name="filesList" Grid.Row="2" ItemSelected="FileSelect">
+        <ListView x:Name="filesList" Grid.Row="2" ItemSelected="FileSelect" SeparatorColor="#666666" Margin="10,0,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}">
-                        <TextCell.ContextActions>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#fefefe"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="database_icon.xml" Margin="3,0,0,0"/>
+                                <Label 
+                                TextColor="Black" Text="{Binding }" />
+                            </StackLayout>
+                        </StackLayout>
+                        <ViewCell.ContextActions>
                             <MenuItem Text="Delete" IsDestructive="True" Clicked="Delete" />
-                        </TextCell.ContextActions>
-                    </TextCell>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                    
+                   
+                    
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

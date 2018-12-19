@@ -38,9 +38,11 @@
             </StackLayout>
             
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ConfirmPasswordEntry" HorizontalOptions="FillAndExpand" Placeholder="Confirm password" IsPassword="True" Margin="40,0,0,0" />
+                <Entry x:Name="ConfirmPasswordEntry" HorizontalOptions="FillAndExpand" Placeholder="Confirm password" IsPassword="True" Margin="36,0,0,0" />
             </StackLayout>
-
+            <Image Source="reminder_cat_bellow.png"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End"/>
         </StackLayout>
         
         
