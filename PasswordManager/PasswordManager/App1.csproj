@@ -38,6 +38,15 @@
     <Compile Update="AddSecureNotePage.xaml.cs">
       <DependentUpon>AddSecureNotePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="ShowWifiPage.xaml.cs">
+      <DependentUpon>ShowWifiPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ShowCardPage.xaml.cs">
+      <DependentUpon>ShowCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ShowSecureNotePage.xaml.cs">
+      <DependentUpon>ShowSecureNotePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="ShowFieldPage.xaml.cs">
       <DependentUpon>ShowFieldPage.xaml</DependentUpon>
     </Compile>
@@ -72,6 +81,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AddSecureNotePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ShowWifiPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ShowCardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ShowSecureNotePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ShowFieldPage.xaml">

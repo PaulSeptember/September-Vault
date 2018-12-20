@@ -1,12 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PasswordManager.AddSecureNotePage">
+             x:Class="App1.AddSecureNotePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10,10,10,10">
+            <StackLayout>
+                <Label Text="Name:" TextColor="Black"/>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="user_icon.xml"/>
+                    <Entry x:Name ="nameEntry" WidthRequest="200" />
+                </StackLayout>
+                <Label Text="Text:" TextColor="Black"/>
+                <Editor x:Name="textEditor" HeightRequest="200" Text="Type here..."/>
+                
+                <Button Text="Save" Clicked="Save"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -88,7 +88,7 @@
                 HorizontalOptions="End"
                 VerticalOptions="End"
                 Clicked="ToAbout"/>
-            <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="cat_from_bellow.png"></Image>
+            <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="cat_from_bellow.png" Margin="0,0,0,20"></Image>
             </Grid>
                
        

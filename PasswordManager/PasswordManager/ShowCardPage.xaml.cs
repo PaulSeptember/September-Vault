@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace App1
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ShowFieldPage : ContentPage
+	public partial class ShowCardPage : ContentPage
 	{
         public bool showPassword = false;
         string Password;
@@ -26,8 +26,7 @@ namespace App1
             if (showPassword)
                 password.Text = "Password: " + Password;
             else
-            {
-                
+            {              
                 for (int i = 0; i < Password.Length; i++)
                 {
                     temp += "*";
@@ -36,15 +35,15 @@ namespace App1
             }
         }
 
-		public ShowFieldPage(Field toShow)
-		{
+        public ShowCardPage(Field toShow)
+        {
             InitializeComponent();
-            Title = "Field " + toShow.name;
-            
-            url.Text ="URL: " + toShow.url;
+            Title = "Card " + toShow.name;
+           
+            url.Text = "Additional info: " + toShow.url;
             Password = toShow.password;
-            login.Text = "Login: " + toShow.login;
+            login.Text = toShow.login;
             UpdatePassword();
         }
-	}
+    }
 }

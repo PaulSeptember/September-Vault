@@ -15,6 +15,7 @@ namespace App1
         string _file;
         Database database;
         DatabaseEditPage parent;
+        bool visible = true;
 		public NewFieldPage (string file, DatabaseEditPage parent)
 		{
 			InitializeComponent ();
@@ -29,6 +30,12 @@ namespace App1
             database = new Database(str);
         }
 
+        async void Reveal()
+        {
+            visible = !visible;
+            passwordEntry.IsPassword = visible;
+        }
+
         async void Save(object sender, EventArgs args)
         {
             Field _field = new Field();
@@ -36,6 +43,7 @@ namespace App1
             _field.login = loginEntry.Text;
             _field.password = passwordEntry.Text;
             _field.url = urlEntry.Text;
+            _field.icon = "key";
             database.Add(_field);
             parent.add(_field);
 

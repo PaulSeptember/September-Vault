@@ -5,9 +5,7 @@
              x:Class="App1.ShowFieldPage">
     <ContentPage.Content>
         <StackLayout Margin="20,0,0,0" Spacing="10">
-            <StackLayout Orientation="Horizontal">
-                <Label x:Name="name" FontSize="Medium" TextColor="Black" />
-            </StackLayout>
+           
             <StackLayout Orientation="Horizontal">
                 <Image Source="user_icon.xml"/>
                 <Label x:Name="login" FontSize="Medium" TextColor="Black" />

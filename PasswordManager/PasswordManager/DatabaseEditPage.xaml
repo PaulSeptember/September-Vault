@@ -15,8 +15,8 @@
                                 <StackLayout BackgroundColor="#fefefe"
                                     Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
-                                        <Image Source="key_icon.xml" Margin="8,0,0,0"/>
-                                        <Label TextColor="Black" Text="{Binding}" />
+                                        <Image Source="{Binding .icon}" Margin="8,0,0,0"/>
+                                        <Label TextColor="Black" Text="{Binding .name}" />
                                     </StackLayout>
                                 </StackLayout>
                                 <ViewCell.ContextActions>
@@ -36,7 +36,7 @@
                     <Button BackgroundColor="Transparent" Image="wifi_icon.xml" x:Name="button1" Text="" Clicked="NewWifi" IsVisible="False"/>
                     <Button BackgroundColor="Transparent" Image="secure_note_icon.xml" x:Name="button2" Text="" Clicked="NewSecure" IsVisible="False"/>
                     <Button BackgroundColor="Transparent" Image="key_icon.xml" x:Name="button3" Text="" Clicked="NewKey" IsVisible="False"/>
-                    <Button Image="images.png" VerticalOptions="End" HorizontalOptions="End" Clicked="CreateNew" BackgroundColor="Transparent" />
+                    <Button x:Name="ButtonAdd" Image="images.png" VerticalOptions="End" HorizontalOptions="End" Clicked="CreateNew" BackgroundColor="Transparent" />
                 </StackLayout>
             </Grid>
         </StackLayout>

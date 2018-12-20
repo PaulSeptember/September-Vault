@@ -1,12 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PasswordManager.AddWifiPage">
+             x:Class="App1.AddWifiPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10,10,10,10">
+            <Label Text="Wi-fi name:" TextColor="Black"/>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="user_icon.xml"/>
+                <Entry x:Name ="nameEntry" WidthRequest="200" />
+            </StackLayout>
+            <Label Text="SSID:" TextColor="Black"/>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="wifi_icon.xml"/>
+                <Entry x:Name ="loginEntry" WidthRequest="200"/>
+            </StackLayout>
+            <Label Text="Password:" TextColor="Black"/>
+            <StackLayout Orientation="Horizontal" >
+                <Image Source="key_icon.xml"/>
+                <Entry x:Name ="passwordEntry" IsPassword="True" WidthRequest="200"/>
+                <Button Image="eye_icon.xml" Clicked="Reveal" BackgroundColor="White" BorderColor="Black" BorderWidth="3" BorderRadius="4" WidthRequest="50"/>
+            </StackLayout>
+            <Label Text="Additional info:" TextColor="Black"/>
+            <Entry x:Name ="urlEntry" />
+            <Button Text="Save" Clicked="Save"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
