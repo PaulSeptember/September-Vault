@@ -10,15 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace App1
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NewFieldPage : ContentPage
+	public partial class AddSecureNotePage : ContentPage
 	{
         string _file;
         Database database;
         DatabaseEditPage parent;
-        bool visible = true;
-		public NewFieldPage (string file, DatabaseEditPage parent)
-		{
-			InitializeComponent ();
+        public AddSecureNotePage(string file, DatabaseEditPage parent)
+        {
+            InitializeComponent();
             _file = file;
             this.parent = parent;
             getDatabase();
@@ -30,20 +29,14 @@ namespace App1
             database = new Database(str);
         }
 
-        async void Reveal()
-        {
-            visible = !visible;
-            passwordEntry.IsPassword = visible;
-        }
-
         async void Save(object sender, EventArgs args)
         {
             Field _field = new Field();
             _field.name = nameEntry.Text;
-            _field.login = loginEntry.Text;
-            _field.password = passwordEntry.Text;
-            _field.url = urlEntry.Text;
-            _field.icon = "key";
+            _field.login = textEditor.Text;//loginEntry.Text;
+            _field.password = "";// passwordEntry.Text;
+            _field.url = "";// urlEntry.Text;
+            _field.type = "secure";
             database.Add(_field);
             parent.add(_field);
 
@@ -51,5 +44,5 @@ namespace App1
             await Navigation.PopAsync();
             return;
         }
-	}
+    }
 }

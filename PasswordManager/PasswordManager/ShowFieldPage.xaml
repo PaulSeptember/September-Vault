@@ -4,11 +4,24 @@
              Title="View"
              x:Class="App1.ShowFieldPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="name" />
-            <Label x:Name="login" />
-            <Label x:Name="password" />
-            <Label x:Name="url" />
+        <StackLayout Margin="20,0,0,0" Spacing="10">
+           
+            <StackLayout Orientation="Horizontal">
+                <Image Source="user_icon.xml"/>
+                <Label x:Name="login" FontSize="Medium" TextColor="Black" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Image Source="key_icon.xml"/>
+                <Label x:Name="password" FontSize="Medium" TextColor="Black" Text="{Binding}"/>
+                <Button Image="eye_icon.xml" Clicked="Reveal" BackgroundColor="White" BorderColor="Black" BorderWidth="3" BorderRadius="4" WidthRequest="50"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Image Source="url_icon.xml"/>
+                <Label x:Name="url" FontSize="Medium" TextColor="Black" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

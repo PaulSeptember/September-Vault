@@ -10,15 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace App1
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NewFieldPage : ContentPage
+	public partial class AddWifiPage : ContentPage
 	{
         string _file;
         Database database;
         DatabaseEditPage parent;
         bool visible = true;
-		public NewFieldPage (string file, DatabaseEditPage parent)
-		{
-			InitializeComponent ();
+        public AddWifiPage(string file, DatabaseEditPage parent)
+        {
+            InitializeComponent();
             _file = file;
             this.parent = parent;
             getDatabase();
@@ -43,7 +43,7 @@ namespace App1
             _field.login = loginEntry.Text;
             _field.password = passwordEntry.Text;
             _field.url = urlEntry.Text;
-            _field.icon = "key";
+            _field.icon = "wifi";
             database.Add(_field);
             parent.add(_field);
 
@@ -51,5 +51,5 @@ namespace App1
             await Navigation.PopAsync();
             return;
         }
-	}
+    }
 }

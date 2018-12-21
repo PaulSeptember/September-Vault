@@ -10,30 +10,30 @@ using Xamarin.Forms.Xaml;
 namespace App1
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NewFieldPage : ContentPage
+	public partial class AddCardPage : ContentPage
 	{
         string _file;
+        bool visible = true;
         Database database;
         DatabaseEditPage parent;
-        bool visible = true;
-		public NewFieldPage (string file, DatabaseEditPage parent)
-		{
-			InitializeComponent ();
+        public AddCardPage(string file, DatabaseEditPage parent)
+        {
+            InitializeComponent();
             _file = file;
             this.parent = parent;
             getDatabase();
-        }
-
-        async void getDatabase()
-        {
-            var str = await DependencyService.Get<IFileWorker>().LoadTextAsync(_file);
-            database = new Database(str);
         }
 
         async void Reveal()
         {
             visible = !visible;
             passwordEntry.IsPassword = visible;
+        }
+
+        async void getDatabase()
+        {
+            var str = await DependencyService.Get<IFileWorker>().LoadTextAsync(_file);
+            database = new Database(str);
         }
 
         async void Save(object sender, EventArgs args)
@@ -43,7 +43,7 @@ namespace App1
             _field.login = loginEntry.Text;
             _field.password = passwordEntry.Text;
             _field.url = urlEntry.Text;
-            _field.icon = "key";
+            _field.icon = "card";
             database.Add(_field);
             parent.add(_field);
 
@@ -51,5 +51,5 @@ namespace App1
             await Navigation.PopAsync();
             return;
         }
-	}
+    }
 }

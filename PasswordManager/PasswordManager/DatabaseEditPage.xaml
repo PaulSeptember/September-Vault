@@ -1,26 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Database edit"
              x:Class="App1.DatabaseEditPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="Caption" HorizontalOptions="Start" FontSize="Large"/>
-            <Label Text="Entries:"/>
+            <Label x:Name="Caption" HorizontalOptions="Start" FontSize="Large" TextColor="Black"/>
+            
+            <Label Text="Entries:" TextColor="Black" FontSize="Medium"/>
             <Grid VerticalOptions="FillAndExpand">
-                <ListView x:Name="databasesList" ItemSelected="DatabaseSelect"   >
+                <ListView x:Name="databasesList" ItemSelected="DatabaseSelect" Margin="20,0,20,0"  >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding}">
-                                <TextCell.ContextActions>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="#fefefe"
+                                    Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding .icon}" Margin="8,0,0,0"/>
+                                        <Label TextColor="Black" Text="{Binding .name}" />
+                                    </StackLayout>
+                                </StackLayout>
+                                <ViewCell.ContextActions>
                                     <MenuItem Text="Delete" IsDestructive="True" Clicked="DeleteExist" />
-                                </TextCell.ContextActions>
-                            </TextCell>
+                                </ViewCell.ContextActions>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="Edit" VerticalOptions="End" HorizontalOptions="End" Clicked="CreateNew"  />
-                
+                <Image x:Name="Cat" 
+                       Source="sad_cat_bellow.png"
+                       VerticalOptions="End"
+                       HorizontalOptions="Start"/>
+                <StackLayout Orientation="Vertical" VerticalOptions="End" HorizontalOptions="End">
+                    
+                    <Button BackgroundColor="Transparent" Image="credit_card_icon.xml" x:Name="button0" Text="" Clicked="NewCard" IsVisible="False" />
+                    <Button BackgroundColor="Transparent" Image="wifi_icon.xml" x:Name="button1" Text="" Clicked="NewWifi" IsVisible="False"/>
+                    <Button BackgroundColor="Transparent" Image="secure_note_icon.xml" x:Name="button2" Text="" Clicked="NewSecure" IsVisible="False"/>
+                    <Button BackgroundColor="Transparent" Image="key_icon.xml" x:Name="button3" Text="" Clicked="NewKey" IsVisible="False"/>
+                    <Button x:Name="ButtonAdd" Image="images.png" VerticalOptions="End" HorizontalOptions="End" Clicked="CreateNew" BackgroundColor="Transparent" />
+                </StackLayout>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

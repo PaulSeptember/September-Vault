@@ -14,6 +14,23 @@ namespace App1
         public string login;
         public string password;
         public string url;
+        public string type;
+        public string _icon;
+        public string icon {
+            get { return _icon; }
+            set
+            {
+                this.type = value;
+                if (value == "key")
+                    _icon = "key_icon";
+                if (value == "card")
+                    _icon = "credit_card_icon";
+                if (value == "secure")
+                    _icon = "secure_note_icon";
+                if (value == "wifi")
+                    _icon = "wifi_icon";
+            }   
+        }
 
         public override string ToString()
         {
@@ -23,21 +40,22 @@ namespace App1
 
     class Database : IEnumerable
     {
-        List<Field> fields = new List<Field>();
+        public List<Field> fields = new List<Field>();
         
         private string password;
         
         public Database(string data)
         {
-            string[] dataArray = data.Split('\n');
+            char[] separator = {'&'};
+            string[] dataArray = data.Split(separator);
             password = dataArray[0];
             Field temp = new Field();
             for (var i = 1; i < dataArray.Length; i++)
             {
-                if(i%4==1)
+                if(i%5==1)
                     temp = new Field();
 
-                switch (i % 4)
+                switch (i % 5)
                 {
                     case 1:
                         temp.name = dataArray[i];
@@ -48,21 +66,34 @@ namespace App1
                     case 3:
                         temp.password = dataArray[i];
                         break;
-                    case 0:
+                    case 4:
                         temp.url = dataArray[i];
                         break;
+                    case 0:
+                        temp.icon = dataArray[i];
+                        break;
                 }
-                if (i % 4 == 0)
+                if (i % 5 == 0)
+                {
                     fields.Add(temp);
+                }
             }
         }
-
-        public string[] getForList()
+        
+        public Field[] getForList()
         {
+            Field[] ans = new Field[fields.Count];
+            for (int i = 0; i < fields.Count; i++)
+                ans[i] = fields[i];
+            return ans;
+            /*
             string[] ans = new string[fields.Count];
             for (int i = 0; i < fields.Count; i++)
+            {
                 ans[i] = fields[i].name;
-            return ans;
+                //ans[i].icon = "key_icon.xml";
+            }
+            return ans;*/
         }
 
         public int size()
@@ -90,15 +121,15 @@ namespace App1
 
         public string getForSave()
         {
-            string ans = password + '\n';
+            string ans = password + '&';
             foreach(var i in fields)
             {
-                ans += i.name + '\n';
-                ans += i.login + '\n';
-                ans += i.password + '\n';
-                ans += i.url + '\n';
+                ans += i.name + '&';
+                ans += i.login + '&';
+                ans += i.password + '&';
+                ans += i.url + '&';
+                ans += i.type + '&';
             }
-            
             return ans;
         }
 

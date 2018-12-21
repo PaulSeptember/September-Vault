@@ -9,7 +9,6 @@ namespace App1
 {
     public partial class MainPage : ContentPage
     {
-        private int pressed = 0;
 
         public MainPage()
         {
@@ -32,17 +31,13 @@ namespace App1
         async void FileSelect(object sender, SelectedItemChangedEventArgs args)
         {
             if (args.SelectedItem == null) return;
-            // получаем выделенный элемент
             string filename = (string)args.SelectedItem;
             await Navigation.PushAsync(new DatabaseOpenPage(filename));
-            // загружем текст в текстовое поле
-            //textEditor.Text = await DependencyService.Get<IFileWorker>().LoadTextAsync((string)args.SelectedItem);
-            // устанавливаем название файла
-            // снимаем выделение
             filesList.SelectedItem = null;
-            UpdateFileList();
+            await UpdateFileList();
 
         }
+       
         private async void ToAbout(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AboutPage());

@@ -10,33 +10,42 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         
-        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" Margin="10,0,10,0">
             <Label Text="Enter name of database:"
+                FontSize="Medium"
+                TextColor="Black"
+                   
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="StartAndExpand"/>
             
             <StackLayout Orientation="Horizontal">
+                <Image Source="user_icon.xml"/>
                 <Entry x:Name="fileNameEntry" HorizontalOptions="FillAndExpand" Placeholder="Name of database" />
-                <Button Text="Save" Clicked="Save" />
+                <Button BackgroundColor="White" BorderColor="Black" BorderWidth="3" BorderRadius="4" Text="Save" Clicked="Save" />
             </StackLayout>
             
             <Label Text="Enter master password:"
+                   FontSize="Medium"
+                TextColor="Black"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="StartAndExpand"/>
 
             <StackLayout Orientation="Horizontal">
+                <Image Source="key_icon.xml"/>
                 <Entry x:Name="PasswordEntry" HorizontalOptions="FillAndExpand" Placeholder="Password" IsPassword="True" />
-                <Button Text="Random" Clicked="Random" />
-                <Button Text="Reveal" Clicked="Reveal" />               
+                <Button Image="random_icon.xml" Clicked="Random" BackgroundColor="White" BorderColor="Black" BorderWidth="3" BorderRadius="4" WidthRequest="50" />
+                <Button Image="eye_icon.xml" Clicked="Reveal" BackgroundColor="White" BorderColor="Black" BorderWidth="3" BorderRadius="4" WidthRequest="50"/>               
             </StackLayout>
             
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ConfirmPasswordEntry" HorizontalOptions="FillAndExpand" Placeholder="Confirm password" IsPassword="True" />
+                <Entry x:Name="ConfirmPasswordEntry" HorizontalOptions="FillAndExpand" Placeholder="Confirm password" IsPassword="True" Margin="36,0,0,0" />
             </StackLayout>
-
+            <Image Source="reminder_cat_bellow.png"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End"/>
         </StackLayout>
         
-        <Editor Grid.Row="1" x:Name="textEditor" />
+        
         
     </Grid>
 </ContentPage>

@@ -15,7 +15,7 @@
                 HorizontalOptions="StartAndExpand"/>
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="passwordEntry" HorizontalOptions="FillAndExpand" Placeholder="Enter password" />
+                <Entry x:Name="passwordEntry" HorizontalOptions="FillAndExpand" Placeholder="Enter password" IsPassword="True"/>
                 <Button Text="Open" Clicked="EncryptDatabase" />
             </StackLayout>
             <Label  Text="Forgot password? Use backup QR-key."/>
