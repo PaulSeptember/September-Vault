@@ -26,6 +26,9 @@
     <Compile Update="DatabaseEditPage.xaml.cs">
       <DependentUpon>DatabaseEditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="MasterDetailPage1MenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="NewFieldPage.xaml.cs">
       <DependentUpon>NewFieldPage.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="DatabaseEditPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MasterDetailPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MasterDetailPage1Detail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MasterDetailPage1Master.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="NewFieldPage.xaml">

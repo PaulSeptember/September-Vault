@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MasterDetailPage1Detail"
+             BackgroundColor="#fefefe"
+             
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout x:Name="Stack1" Spacing="9" Margin="0,20,0,0">
+
+
+        <Button Text = "Open file..." 
+            FontSize="Large" BorderWidth="3"
+            WidthRequest="300"
+            BorderColor="Black"
+            BorderRadius="4"
+            BackgroundColor="White"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="ToChoose"/>
+
+        <Button Text = "Create new database..." 
+            BackgroundColor="White"
+            BorderRadius="4"
+            WidthRequest="300"
+            FontSize="Large" BorderWidth="3"
+            BorderColor="Black"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="ToCreate"/>
+
+        <Label Text="Recent databases:" 
+            Margin="20,0,20,0"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="Medium"
+            FontFamily="Arial"/>
+        <ListView 
+            Margin="20,0,20,0"
+            x:Name="filesList" ItemSelected="FileSelect" SeparatorColor="#666666" MinimumHeightRequest="300">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#fefefe"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="key_icon.xml"/>
+                                <Label 
+                                TextColor="Black" Text="{Binding }" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid MinimumHeightRequest="140">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                    HeightRequest="130"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Image="settings_icon.xml"
+                    FontSize="Large" BorderWidth="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    BackgroundColor="Transparent"
+                    Clicked="ToSettings"/>
+            <Button 
+                    HeightRequest="130"
+                     Grid.Row="0"
+                    Grid.Column="2"
+                Image="about_icon.xml"
+                FontSize="Large" BorderWidth="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Clicked="ToAbout"/>
+            <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="cat_from_bellow.png" Margin="0,0,0,20"></Image>
+        </Grid>
+
+
+    </StackLayout>
+
+</ContentPage>

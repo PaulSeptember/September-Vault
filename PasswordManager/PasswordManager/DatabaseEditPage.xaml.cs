@@ -74,19 +74,19 @@ namespace App1
         }
         async public void NewKey(object sender, SelectedItemChangedEventArgs args)
         {
-            await Navigation.PushAsync(new NewFieldPage(file, this));
+            await Navigation.PushAsync(new NewFieldPage(file, this),true);
         }
         async public void NewWifi(object sender, SelectedItemChangedEventArgs args)
         {
-            await Navigation.PushAsync(new AddWifiPage(file, this));
+            await Navigation.PushAsync(new AddWifiPage(file, this), true);
         }
         async public void NewCard(object sender, SelectedItemChangedEventArgs args)
         {
-            await Navigation.PushAsync(new AddCardPage(file, this));
+            await Navigation.PushAsync(new AddCardPage(file, this), true);
         }
         async public void NewSecure(object sender, SelectedItemChangedEventArgs args)
         {
-            await Navigation.PushAsync(new AddSecureNotePage(file, this));
+            await Navigation.PushAsync(new AddSecureNotePage(file, this), true);
         }
 
 
@@ -103,22 +103,22 @@ namespace App1
             if (((Field)args.SelectedItem).type == "secure")
             {
                 databasesList.SelectedItem = null;
-                await Navigation.PushAsync(new ShowSecureNotePage(database.findByName(selectedName)));
+                await Navigation.PushAsync(new ShowSecureNotePage(database.findByName(selectedName)),true);
             }
             if (((Field)args.SelectedItem).type == "wifi")
             {
                 databasesList.SelectedItem = null;
-                await Navigation.PushAsync(new ShowWifiPage(database.findByName(selectedName)));
+                await Navigation.PushAsync(new ShowWifiPage(database.findByName(selectedName)), true);
             }
             if (((Field)args.SelectedItem).type == "card")
             {
                 databasesList.SelectedItem = null;
-                await Navigation.PushAsync(new ShowCardPage(database.findByName(selectedName)));
+                await Navigation.PushAsync(new ShowCardPage(database.findByName(selectedName)), true);
             }
             if (((Field)args.SelectedItem).type == "key")
             {
                 databasesList.SelectedItem = null;
-                await Navigation.PushAsync(new ShowFieldPage(database.findByName(selectedName)));
+                await Navigation.PushAsync(new ShowFieldPage(database.findByName(selectedName)), true);
             }
         }
 
